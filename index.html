@@ -14,45 +14,50 @@
   </head>
   <body>
     <main>
-      <div class="game">
-        <div class="game__container">
-          <div class="wheel__wrapper">
-            <img
-              width="590"
-              height="550"
-              src="./images/wheel/Wheel_holder.png"
-              alt="wheel holder"
-              class="wheel__image wheel__image-holder"
-            />
+      <!-- divs instead of images to not add excessive semantic meaning for decorative elements -->
+      <div class="decor-left-top"></div>
+      <div class="decor-right-top"></div>
+      <div class="decor-left-bottom"></div>
+      <div class="decor-right-bottom"></div>
 
-            <img
-              width="590"
-              height="550"
-              src="./images/wheel/Wheel_options.png"
-              alt="wheel options"
-              class="wheel__image wheel__image-options"
-            />
-            <img
-              width="590"
-              height="550"
-              src="./images/wheel/Wheel_winframe.png"
-              alt="wheel winframe"
-              class="wheel__image wheel__image-winframe"
-            />
-            <img
-              width="590"
-              height="550"
-              src="./images/wheel/Wheel_lights.png"
-              alt="wheel lights"
-              class="wheel__image wheel__image-lights"
-            />
-            <img
-              src="./images/wheel/Wheel_center.png"
-              alt="wheel center"
-              class="wheel__image wheel__image-center"
-            />
-          </div>
-        </div>
+      <svg>
+        <use href="./images/sprite.svg#logo"></use>
+      </svg>
+      <div class="wheel__wrapper">
+        <img
+          width="590"
+          height="550"
+          src="./images/wheel/Wheel_holder.png"
+          alt="wheel holder"
+          class="wheel__image wheel__image-holder"
+        />
+
+        <img
+          width="590"
+          height="550"
+          src="./images/wheel/Wheel_options.png"
+          alt="wheel options"
+          class="wheel__image wheel__image-options"
+        />
+        <img
+          width="590"
+          height="550"
+          src="./images/wheel/Wheel_winframe.png"
+          alt="wheel winframe"
+          class="wheel__image wheel__image-winframe"
+        />
+        <img
+          width="590"
+          height="550"
+          src="./images/wheel/Wheel_lights.png"
+          alt="wheel lights"
+          class="wheel__image wheel__image-lights"
+        />
+        <img
+          src="./images/wheel/Wheel_center.png"
+          alt="wheel center"
+          class="wheel__image wheel__image-center"
+        />
       </div>
     </main>
   </body>

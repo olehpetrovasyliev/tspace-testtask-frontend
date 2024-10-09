@@ -17,11 +17,19 @@ body {
   min-height: 100vh;
 }
 
+main {
+  padding: 30px 95px;
+  position: relative;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
 .wheel__wrapper {
   position: relative;
   width: 590px;
   height: 550px;
-  margin: 100px auto;
+  margin: 0 auto;
 
   > .wheel__image {
     display: block;
@@ -30,4 +38,55 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
   }
+}
+
+.decor-left-top,
+.decor-left-bottom,
+.decor-right-bottom,
+.decor-right-top {
+  position: absolute;
+}
+
+.decor-left-top,
+.decor-left-bottom {
+  left: 0;
+}
+
+.decor-right-bottom,
+.decor-right-top {
+  right: 0;
+}
+
+.decor-left-top,
+.decor-right-top {
+  top: 0;
+}
+
+.decor-left-bottom,
+.decor-right-bottom {
+  bottom: 0;
+}
+
+.decor-left-top {
+  width: 360px;
+  height: 220px;
+  background-image: url("./images/decor/Gears_left.png");
+}
+
+.decor-right-top {
+  width: 360px;
+  height: 250px;
+  background-image: url("./images/decor/Gears_right_top.png");
+}
+
+.decor-left-bottom {
+  width: 450px;
+  height: 245px;
+  background-image: url("./images/decor/Dice_golden.png");
+}
+
+.decor-right-bottom {
+  width: 247px;
+  height: 273px;
+  background-image: url("./images/decor/Gears_right_bottom.png");
 }
