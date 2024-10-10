@@ -23,42 +23,122 @@
       <svg>
         <use href="./images/sprite.svg#logo"></use>
       </svg>
-      <div class="wheel__wrapper">
-        <img
-          width="590"
-          height="550"
-          src="./images/wheel/Wheel_holder.png"
-          alt="wheel holder"
-          class="wheel__image wheel__image-holder"
-        />
+      <div class="mainContent_container">
+        <div class="card card-left">
+          <span> Özel promosyonlar, Doğum günü hediyeleri </span>
+        </div>
+        <div class="wheel__wrapper">
+          <img
+            width="590"
+            height="550"
+            src="./images/wheel/Wheel_holder.png"
+            alt="wheel holder"
+            class="wheel__image wheel__image-holder"
+          />
 
-        <img
-          width="590"
-          height="550"
-          src="./images/wheel/Wheel_options.png"
-          alt="wheel options"
-          class="wheel__image wheel__image-options"
-        />
-        <img
-          width="590"
-          height="550"
-          src="./images/wheel/Wheel_winframe.png"
-          alt="wheel winframe"
-          class="wheel__image wheel__image-winframe"
-        />
-        <img
-          width="590"
-          height="550"
-          src="./images/wheel/Wheel_lights.png"
-          alt="wheel lights"
-          class="wheel__image wheel__image-lights"
-        />
-        <img
-          src="./images/wheel/Wheel_center.png"
-          alt="wheel center"
-          class="wheel__image wheel__image-center"
-        />
+          <img
+            width="590"
+            height="550"
+            src="./images/wheel/Wheel_options.png"
+            alt="wheel options"
+            class="wheel__image wheel__image-options"
+          />
+          <img
+            width="590"
+            height="550"
+            src="./images/wheel/Wheel_winframe.png"
+            alt="wheel winframe"
+            class="wheel__image wheel__image-winframe"
+          />
+          <img
+            width="590"
+            height="550"
+            src="./images/wheel/Wheel_lights.png"
+            alt="wheel lights"
+            class="wheel__image wheel__image-lights"
+          />
+          <img
+            src="./images/wheel/Wheel_center.png"
+            alt="wheel center"
+            class="wheel__image wheel__image-center"
+          />
+        </div>
+        <div class="card card-right">
+          Doğrulanmış hesaplara, para yatırmadan BEDAVA OYUN
+        </div>
+
+        <div class="bonus bonus_firstSpin">
+          <p class="bonus_numbers">100</p>
+          <p class="bonus_detils">Bedava Oyun</p>
+        </div>
+        <div class="bonus bonus_secondSpin">
+          <p class="bonus_additionalInfo">Bonus</p>
+          <p class="bonus_numbers">+100%</p>
+          <p class="bonus_detils">yatırımlara</p>
+        </div>
       </div>
+
+      <button type="button" class="button-spin">
+        <img src="./images/spin.png" alt="spin icon" width="40" height="40" />
+        <span class="spin-text"> OYNA </span>
+      </button>
     </main>
+    <div class="backdrop">
+      <div class="modal">
+        <div class="modal__header">Kaydolun</div>
+        <div class="modal__content">
+          <div class="modal__titlesWrapper">
+            <h2 class="modal__title modal__title-firstSpin">
+              Bonus yatırımlara+100%
+            </h2>
+            <h2 class="modal__title modal__title-secondSpin">
+              +100 bedava oyun
+            </h2>
+          </div>
+          <h3 class="modal__subtitle">Bir hesap oluşturun</h3>
+
+          <div class="modal_buttonsWrapper">
+            <button
+              type="button"
+              class="modal__button-formToggle modal__button-phone active"
+            >
+              E-posta ile
+            </button>
+            <button
+              type="button"
+              class="modal__button-formToggle modal__button-mail"
+            >
+              Telefon ile
+            </button>
+          </div>
+
+          <form class="modal__form">
+            <input type="email" name="" id="" />
+            <select name="" id="">
+              <option value=""></option>
+              <option value=""></option>
+              <option value=""></option>
+              <option value=""></option>
+            </select>
+            <input type="password" name="" id="" />
+            <button type="submit">Bonus Kazanın</button>
+            <hr />
+            <p>
+              Hesabınız yok mu?
+              <a href="/"> Giriş yap </a>
+            </p>
+
+            <label
+              >Hüküm <a href="/">ve koşulları kabul ediyorum</a
+              ><input type="checkbox" name=""
+            /></label>
+            <label
+              ><input type="checkbox" name="" /> E-posta ve SMS yoluyla
+              promosyonlar hakkında bültenler alın</label
+            >
+          </form>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

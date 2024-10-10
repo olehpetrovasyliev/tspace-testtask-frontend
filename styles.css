@@ -9,12 +9,21 @@ html {
   margin: 0;
 }
 
+button,
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
 body {
   background-image: url("./images/Background.png");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 100vh;
+  position: relative;
+
+  font-family: "Inter", sans-serif;
 }
 
 main {
@@ -29,7 +38,7 @@ main {
   position: relative;
   width: 590px;
   height: 550px;
-  margin: 0 auto;
+  margin: 0 -100px 0 -100px;
 
   > .wheel__image {
     display: block;
@@ -89,4 +98,184 @@ main {
   width: 247px;
   height: 273px;
   background-image: url("./images/decor/Gears_right_bottom.png");
+}
+
+.button-spin {
+  padding: 23px 103px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  background: linear-gradient(90deg, #ec1f01 0%, #b31700 100%);
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(255, 0, 0, 0.85);
+
+  .spin-text {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 30px;
+    font-weight: 700;
+  }
+}
+
+.card {
+  height: 184px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: 22px;
+  font-weight: 800;
+  color: #e21f26;
+}
+
+.card-left {
+  width: 424px;
+
+  text-align: right;
+  justify-content: flex-end;
+  background-image: url("./images/decor/content-left.png");
+  padding-right: 73px;
+
+  * {
+    max-width: 262px;
+    margin: auto 0;
+    display: block;
+  }
+}
+
+.card-right {
+  width: 410px;
+  background-image: url("./images/decor/content-right.png");
+  padding-left: 69px;
+
+  * {
+    max-width: 316px;
+    margin: auto 0;
+    display: block;
+  }
+}
+
+.mainContent_container {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.bonus {
+  background-image: url("./images/decor/bonus_bg.png");
+  background-size: contain;
+  width: 278px;
+  height: 193px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  position: absolute;
+  top: 40%;
+
+  * {
+    color: #391909;
+    text-transform: uppercase;
+  }
+}
+
+.bonus_firstSpin {
+  left: 10%;
+}
+
+.bonus_secondSpin {
+  right: 10%;
+}
+
+.bonus_numbers {
+  font-weight: 900;
+  font-size: 55px;
+}
+
+.bonus_detils {
+  font-weight: 800;
+  font-size: 24px;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 405px;
+  height: 665px;
+  background: #fff;
+}
+
+.modal__header {
+  text-align: center;
+  padding: 15px 0;
+  text-transform: uppercase;
+  color: #fff;
+  background: #e21f26;
+  font-weight: 700;
+}
+
+.modal__title {
+  text-align: center;
+  font-weight: 900;
+  text-transform: uppercase;
+
+  &.modal__title-firstSpin {
+    font-size: 30px;
+    margin-bottom: 8px;
+    color: #e21f26;
+  }
+
+  &.modal__title-secondSpin {
+    font-size: 28px;
+    color: #212121;
+  }
+}
+
+.modal__content {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.modal__subtitle {
+  color: #212121;
+  text-transform: uppercase;
+  font-size: 20px;
+  text-align: center;
+}
+
+.modal_buttonsWrapper {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.modal__button-formToggle {
+  background: #fff;
+  border: 1px solid #212121;
+  border-radius: 50px;
+  color: #212121;
+  padding: 10px 40px;
+  font-weight: 700;
+
+  &.active {
+    background: #e21f26;
+    border: none;
+    color: #fff;
+  }
 }
