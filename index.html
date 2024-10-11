@@ -67,23 +67,26 @@
           Doğrulanmış hesaplara, para yatırmadan BEDAVA OYUN
         </div>
 
-        <div class="bonus bonus_firstSpin">
+        <div class="bonus bonus_firstSpin hidden">
           <p class="bonus_numbers">100</p>
           <p class="bonus_detils">Bedava Oyun</p>
         </div>
-        <div class="bonus bonus_secondSpin">
+        <div class="bonus bonus_secondSpin hidden">
           <p class="bonus_additionalInfo">Bonus</p>
           <p class="bonus_numbers">+100%</p>
           <p class="bonus_detils">yatırımlara</p>
         </div>
       </div>
+      <audio id="spinSound" src="./sounds/spinning.mp3" preload="auto"></audio>
+      <audio id="winSound" src="./sounds/win.mp3" preload="auto"></audio>
 
       <button type="button" class="button-spin">
         <img src="./images/spin.png" alt="spin icon" width="40" height="40" />
         <span class="spin-text"> OYNA </span>
       </button>
     </main>
-    <div class="backdrop">
+
+    <div class="backdrop hidden">
       <div class="modal">
         <div class="modal__header">Kaydolun</div>
         <div class="modal__content">
@@ -113,32 +116,51 @@
           </div>
 
           <form class="modal__form">
-            <input type="email" name="" id="" />
-            <select name="" id="">
-              <option value=""></option>
-              <option value=""></option>
-              <option value=""></option>
-              <option value=""></option>
+            <label for="mail" id="emailLabel">
+              E-posta (gereki)
+              <input type="email" name="mail" id="mail" placeholder="E-posta" />
+            </label>
+
+            <label for="phone" id="phoneLabel" class="hidden">
+              Telefon
+              <input type="tel" name="phone" id="phone" placeholder="Telefon" />
+            </label>
+
+            <select name="currency" id="currency">
+              <option value="try">try</option>
+              <option value="eur">eur</option>
+              <option value="usd">usd</option>
+              <option value="blr">blr</option>
             </select>
-            <input type="password" name="" id="" />
+
+            <label for="password">
+              <input
+                type="password"
+                name="password"
+                id="password"
+                placeholder="Parola"
+              />
+            </label>
+
             <button type="submit">Bonus Kazanın</button>
-            <hr />
             <p>
               Hesabınız yok mu?
               <a href="/"> Giriş yap </a>
             </p>
+            <hr />
 
-            <label
-              >Hüküm <a href="/">ve koşulları kabul ediyorum</a
-              ><input type="checkbox" name=""
-            /></label>
-            <label
-              ><input type="checkbox" name="" /> E-posta ve SMS yoluyla
-              promosyonlar hakkında bültenler alın</label
+            <label for="agreement">
+              <input type="checkbox" name="agreement" id="agreement" checked />
+              Hüküm <a href="/">ve koşulları kabul ediyorum</a></label
+            >
+            <label for="verified"
+              ><input type="checkbox" name="verified" id="verified" checked />
+              E-posta ve SMS yoluyla promosyonlar hakkında bültenler alın</label
             >
           </form>
         </div>
       </div>
     </div>
+    <script src="./main.js"></script>
   </body>
 </html>
