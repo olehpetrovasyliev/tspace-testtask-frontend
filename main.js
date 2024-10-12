@@ -11,8 +11,14 @@ const formToggleButtons = document.querySelectorAll(
 );
 
 const backdrop = document.querySelector(".backdrop");
+const modal = document.querySelector(".modal");
+
 const emailLabel = document.getElementById("emailLabel");
 const phoneLabel = document.getElementById("phoneLabel");
+
+let emailLabelStored = emailLabel;
+let phoneLabelStored = phoneLabel;
+
 const form = document.querySelector(".modal__form");
 
 let count = 0;
@@ -39,6 +45,9 @@ spinButton.addEventListener("click", () => {
     setTimeout(() => {
       backdrop.classList.remove("hidden");
     }, 7100);
+    setTimeout(() => {
+      modal.classList.remove("transparent");
+    }, 7200);
   }
 });
 

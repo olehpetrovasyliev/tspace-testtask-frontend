@@ -87,7 +87,7 @@
     </main>
 
     <div class="backdrop hidden">
-      <div class="modal">
+      <div class="modal transparent">
         <div class="modal__header">Kaydolun</div>
         <div class="modal__content">
           <div class="modal__titlesWrapper">
@@ -118,12 +118,24 @@
           <form class="modal__form">
             <label for="mail" id="emailLabel">
               E-posta (gereki)
-              <input type="email" name="mail" id="mail" placeholder="E-posta" />
+              <input
+                type="email"
+                name="mail"
+                id="mail"
+                placeholder="E-posta"
+                class="modal__form-input modal__form-input-mail"
+              />
             </label>
 
             <label for="phone" id="phoneLabel" class="hidden">
               Telefon
-              <input type="tel" name="phone" id="phone" placeholder="Telefon" />
+              <input
+                type="tel"
+                name="phone"
+                id="phone"
+                placeholder="Telefon"
+                class="modal__form-input modal__form-input-phone"
+              />
             </label>
 
             <select name="currency" id="currency">
@@ -139,19 +151,25 @@
                 name="password"
                 id="password"
                 placeholder="Parola"
+                class="modal__form-input modal__form-input-password"
               />
             </label>
 
-            <button type="submit">Bonus Kazanın</button>
-            <p>
+            <button type="submit" class="modal__form-submitBtn">
+              Bonus Kazanın
+            </button>
+            <p class="modal__form-additionalInfo">
               Hesabınız yok mu?
-              <a href="/"> Giriş yap </a>
+              <a href="/" class="modal__form-additionalInfoLink"> Giriş yap </a>
             </p>
             <hr />
 
             <label for="agreement">
               <input type="checkbox" name="agreement" id="agreement" checked />
-              Hüküm <a href="/">ve koşulları kabul ediyorum</a></label
+              Hüküm
+              <a href="/" class="modal__form-additionalInfoLink"
+                >ve koşulları kabul ediyorum</a
+              ></label
             >
             <label for="verified"
               ><input type="checkbox" name="verified" id="verified" checked />
