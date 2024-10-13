@@ -23,7 +23,7 @@
       <div class="decor-left-bottom"></div>
       <div class="decor-right-bottom"></div>
 
-      <svg>
+      <svg class="logo">
         <use href="./images/sprite.svg#logo"></use>
       </svg>
       <div class="mainContent_container">
@@ -93,8 +93,8 @@
       </button>
     </main>
 
-    <div class="backdrop">
-      <div class="modal">
+    <div class="backdrop hidden">
+      <div class="modal transparent">
         <div class="modal__header">Kaydolun</div>
         <div class="modal__content">
           <div class="modal__titlesWrapper">
@@ -184,8 +184,8 @@
                 </div>
               </div>
 
-              <div>
-                <p class="modal__form-labelText">Parola</p>
+              <label class="modal__form-label">
+                <span class="modal__form-labelText">Parola</span>
 
                 <input
                   type="password"
@@ -194,7 +194,7 @@
                   placeholder="Parola"
                   class="modal__form-input modal__form-input-password"
                 />
-              </div>
+              </label>
             </div>
             <button type="submit" class="modal__form-submitBtn">
               Bonus Kazanın
@@ -203,6 +203,7 @@
               Hesabınız yok mu?
               <a href="/" class="modal__form-additionalInfoLink"> Giriş yap </a>
             </p>
+
             <hr />
 
             <label class="checkbox-label">
