@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./reset.css" />
     <link rel="stylesheet" href="./styles.css" />
-
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css"
+    />
     <title>Test task</title>
     <meta
       name="description"
@@ -25,7 +28,9 @@
       </svg>
       <div class="mainContent_container">
         <div class="card card-left">
-          <span> Özel promosyonlar, Doğum günü hediyeleri </span>
+          <p class="card-left-content">
+            Özel promosyonlar, Doğum günü hediyeleri
+          </p>
         </div>
         <div class="wheel__wrapper">
           <img
@@ -64,7 +69,9 @@
           />
         </div>
         <div class="card card-right">
-          Doğrulanmış hesaplara, para yatırmadan BEDAVA OYUN
+          <p class="card-right-content">
+            Doğrulanmış hesaplara, para yatırmadan BEDAVA OYUN
+          </p>
         </div>
 
         <div class="bonus bonus_firstSpin hidden">
@@ -86,8 +93,8 @@
       </button>
     </main>
 
-    <div class="backdrop hidden">
-      <div class="modal transparent">
+    <div class="backdrop">
+      <div class="modal">
         <div class="modal__header">Kaydolun</div>
         <div class="modal__content">
           <div class="modal__titlesWrapper">
@@ -103,58 +110,92 @@
           <div class="modal_buttonsWrapper">
             <button
               type="button"
-              class="modal__button-formToggle modal__button-phone active"
+              class="modal__button-formToggle modal__button-mail active"
+              id="emailButton"
             >
               E-posta ile
             </button>
             <button
               type="button"
-              class="modal__button-formToggle modal__button-mail"
+              class="modal__button-formToggle modal__button-phone"
+              id="phoneButton"
             >
               Telefon ile
             </button>
           </div>
 
           <form class="modal__form">
-            <label for="mail" id="emailLabel">
-              E-posta (gereki)
-              <input
-                type="email"
-                name="mail"
-                id="mail"
-                placeholder="E-posta"
-                class="modal__form-input modal__form-input-mail"
-              />
-            </label>
+            <div class="modal__form-dynamicInputWrapper">
+              <div id="emailLabel">
+                <p class="modal__form-labelText">E-posta (gereki)</p>
+                <input
+                  type="email"
+                  name="mail"
+                  id="mail"
+                  placeholder="E-posta"
+                  class="modal__form-input modal__form-input-mail"
+                />
+              </div>
+            </div>
+            <div class="modal__form-passwordAndCurrencyWrapper">
+              <div class="currencySelectWrapper">
+                <p class="modal__form-labelText">Para birimi*</p>
+                <div class="selectWrapper currencySelet-wrapper">
+                  <select
+                    name="currency"
+                    id="currency"
+                    class="currencySelect-default select-default hidden"
+                  >
+                    <option value="try">TRY</option>
+                    <option value="eur">EUR</option>
+                    <option value="usd">USD</option>
+                    <option value="brl">BRL</option>
+                  </select>
+                  <div class="currecySelect-selectedOption selected-option">
+                    <div class="currecySelect-value">TRY</div>
+                    <div class="arrow">▼</div>
+                    <div class="currencySelect-optionsList optionsList hidden">
+                      <div
+                        class="currencySelect-option option"
+                        data-value="try"
+                      >
+                        TRY
+                      </div>
+                      <div
+                        class="currencySelect-option option"
+                        data-value="eur"
+                      >
+                        EUR
+                      </div>
+                      <div
+                        class="currencySelect-option option"
+                        data-value="usd"
+                      >
+                        USD
+                      </div>
+                      <div
+                        class="currencySelect-option option"
+                        data-value="brl"
+                      >
+                        BRL
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
-            <label for="phone" id="phoneLabel" class="hidden">
-              Telefon
-              <input
-                type="tel"
-                name="phone"
-                id="phone"
-                placeholder="Telefon"
-                class="modal__form-input modal__form-input-phone"
-              />
-            </label>
+              <div>
+                <p class="modal__form-labelText">Parola</p>
 
-            <select name="currency" id="currency">
-              <option value="try">try</option>
-              <option value="eur">eur</option>
-              <option value="usd">usd</option>
-              <option value="blr">blr</option>
-            </select>
-
-            <label for="password">
-              <input
-                type="password"
-                name="password"
-                id="password"
-                placeholder="Parola"
-                class="modal__form-input modal__form-input-password"
-              />
-            </label>
-
+                <input
+                  type="password"
+                  name="password"
+                  id="password"
+                  placeholder="Parola"
+                  class="modal__form-input modal__form-input-password"
+                />
+              </div>
+            </div>
             <button type="submit" class="modal__form-submitBtn">
               Bonus Kazanın
             </button>
@@ -164,16 +205,35 @@
             </p>
             <hr />
 
-            <label for="agreement">
-              <input type="checkbox" name="agreement" id="agreement" checked />
-              Hüküm
-              <a href="/" class="modal__form-additionalInfoLink"
-                >ve koşulları kabul ediyorum</a
-              ></label
+            <label class="checkbox-label">
+              <input
+                class="checkbox"
+                type="checkbox"
+                name="agreement"
+                checked
+                required
+              />
+              <span class="checkbox-icon"></span>
+              <span class="checkbox-labelText">
+                Hüküm
+                <a href="/" class="modal__form-additionalInfoLink"
+                  >ve koşulları kabul ediyorum</a
+                >
+              </span></label
             >
-            <label for="verified"
-              ><input type="checkbox" name="verified" id="verified" checked />
-              E-posta ve SMS yoluyla promosyonlar hakkında bültenler alın</label
+
+            <label class="checkbox-label"
+              ><input
+                class="checkbox"
+                type="checkbox"
+                name="verified"
+                checked
+                required
+              />
+              <span class="checkbox-icon"></span>
+              <span class="checkbox-labelText">
+                E-posta ve SMS yoluyla promosyonlar hakkında bültenler alın
+              </span></label
             >
           </form>
         </div>
