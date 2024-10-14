@@ -67,6 +67,7 @@ main {
   @media only screen and (max-width: 1280px) {
     margin: 0;
     grid-column: 1 / span 2;
+    height: 350px;
 
     > .wheel__image {
       object-fit: contain;
