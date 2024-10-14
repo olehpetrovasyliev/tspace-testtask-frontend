@@ -69,6 +69,7 @@ formToggleButtons.forEach((button) => {
                   id="email"
                   placeholder="E-posta"
                   class="modal__form-input modal__form-input-mail"
+                  required
                 />
               </div>
       `;
@@ -434,6 +435,7 @@ formToggleButtons.forEach((button) => {
                     id="phone"
                     placeholder="Telefon"
                     class="modal__form-input modal__form-input-phone"
+                    required
                   />
                 </div>
               </div>
