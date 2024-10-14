@@ -469,14 +469,6 @@ formToggleButtons.forEach((button) => {
   });
 });
 
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  const formData = new FormData(form);
-  const formObject = Object.fromEntries(formData.entries());
-
-  console.log(formObject);
-});
-
 function initCustomSelect(
   selectElement,
   customSelectWrapper,
@@ -533,3 +525,40 @@ initCustomSelect(
   currencyOptionItems,
   currencyValueDisplay
 );
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const formData = new FormData(form);
+  const formObject = Object.fromEntries(formData.entries());
+
+  const userInfo = !formObject.phone
+    ? {
+        ...formObject,
+        verified: Boolean(formObject.verified),
+        agreement: Boolean(formObject.agreement),
+      }
+    : {
+        ...formObject,
+        verified: Boolean(formObject.verified),
+        agreement: Boolean(formObject.agreement),
+        phone: `+${formObject.country}${formObject.phone}`,
+      };
+
+  console.log(userInfo);
+
+  fetch("https://tspace-testtask-backend.onrender.com/register", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(userInfo),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+      alert(data.message);
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
+});
