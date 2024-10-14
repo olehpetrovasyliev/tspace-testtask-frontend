@@ -225,7 +225,7 @@ main {
   width: 100%;
 
   text-align: right;
-  background-image: url("./images/LeftCardBg.svg");
+  background-image: url("./images/decor/content-left.png");
   padding-right: 73px;
   background-size: contain;
   justify-content: flex-end;
@@ -237,19 +237,25 @@ main {
 
   @media only screen and (max-width: 1280px) {
     grid-column: 2;
+    background-image: url("./images/LeftCardBg.svg");
   }
 }
 
 .card-right {
   max-width: 410px;
   width: 100%;
-  background-image: url("./images/RightCardBg.svg");
+  background-image: url("./images/decor/content-right.png");
+
   padding-left: 69px;
   background-size: contain;
 
   * {
     max-width: 316px;
     width: 100%;
+  }
+
+  @media only screen and (max-width: 1280px) {
+    background-image: url("./images/RightCardBg.svg");
   }
 }
 
@@ -493,6 +499,17 @@ main {
   display: block;
 }
 
+.passwordLabel {
+  position: relative;
+}
+
+.hideIcon {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  cursor: pointer;
+}
+
 .modal__form-labelText {
   font-size: 14px;
   margin-bottom: 5px;
@@ -602,6 +619,23 @@ main {
   background: url("./images/Checkbox-checked.svg");
 }
 
+.alert {
+  color: #e21f26;
+  padding: 25px 30px 30px;
+  border-radius: 5px;
+  border: 1px solid #e21f26;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 16px;
+  background: #212121;
+  z-index: 100;
+
+  @media only screen and (max-width: 768px) {
+    font-size: 12px;
+  }
+}
+
 .hidden {
   display: none;
 }
@@ -620,7 +654,7 @@ main {
 
 @keyframes secondSpin {
   0% {
-    transform: rotate(0deg);
+    transform: rotate(390deg);
   }
   30% {
     transform: rotate(720deg);

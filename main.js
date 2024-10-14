@@ -65,8 +65,8 @@ formToggleButtons.forEach((button) => {
                 <p class="modal__form-labelText"> E-posta (gereki) </p>
                 <input
                   type="email"
-                  name="mail"
-                  id="mail"
+                  name="email"
+                  id="email"
                   placeholder="E-posta"
                   class="modal__form-input modal__form-input-mail"
                 />
@@ -526,6 +526,19 @@ initCustomSelect(
   currencyValueDisplay
 );
 
+const passwordInput = document.querySelector("#password");
+const hideIcon = document.querySelector(".hideIcon");
+
+hideIcon.addEventListener("click", () => {
+  if (passwordInput.type === "password") {
+    passwordInput.type = "text";
+  } else {
+    passwordInput.type = "password";
+  }
+});
+
+const customAlert = document.querySelector(".alert");
+
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   const formData = new FormData(form);
@@ -544,8 +557,6 @@ form.addEventListener("submit", (e) => {
         phone: `+${formObject.country}${formObject.phone}`,
       };
 
-  console.log(userInfo);
-
   fetch("https://tspace-testtask-backend.onrender.com/register", {
     method: "POST",
     headers: {
@@ -555,10 +566,13 @@ form.addEventListener("submit", (e) => {
   })
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
-      alert(data.message);
+      if (!data.status) {
+        customAlert.classList.toggle(hidden);
+      } else alert("Registration succesful");
     })
     .catch((error) => {
-      console.error("Error:", error);
+      console.log(error);
+
+      customAlert.classList.remove(hidden);
     });
 });
