@@ -1,3 +1,12 @@
+:root {
+  --primary-color: #e21f26;
+  --secondary-color: #ec1f01;
+  --secondary-dark-color: #b31700;
+  --text-color-light: #fff;
+  --text-color-dark: #212121;
+  --text-color-grey: #797979;
+}
+
 html {
   box-sizing: border-box;
 }
@@ -181,7 +190,11 @@ main {
   justify-content: center;
   align-items: center;
   gap: 15px;
-  background: linear-gradient(90deg, #ec1f01 0%, #b31700 100%);
+  background: linear-gradient(
+    90deg,
+    var(--secondary-color) 0%,
+    var(--secondary-dark-color) 100%
+  );
   border: none;
   border-radius: 10px;
   box-shadow: 0px 4px 8px rgba(255, 0, 0, 0.85);
@@ -193,7 +206,7 @@ main {
   }
 
   .spin-text {
-    color: #fff;
+    color: var(--text-color-light);
     text-transform: uppercase;
     font-size: 30px;
     font-weight: 700;
@@ -212,7 +225,7 @@ main {
   text-transform: uppercase;
   font-size: 22px;
   font-weight: 800;
-  color: #e21f26;
+  color: var(--primary-color);
   background-repeat: no-repeat;
 
   @media only screen and (max-width: 1280px) {
@@ -376,7 +389,7 @@ main {
   transform: translate(-50%, -50%);
   width: 405px;
   height: 665px;
-  background: #fff;
+  background: var(--text-color-light);
   border-radius: 5px;
   box-shadow: 0px 0px 20px 5px rgba(255, 0, 0, 0.5);
   overflow: hidden;
@@ -402,8 +415,8 @@ main {
   text-align: center;
   padding: 15px 0;
   text-transform: uppercase;
-  color: #fff;
-  background: #e21f26;
+  color: var(--text-color-light);
+  background: var(--primary-color);
   font-weight: 700;
 }
 
@@ -415,7 +428,7 @@ main {
   &.modal__title-firstSpin {
     font-size: 30px;
     margin-bottom: 8px;
-    color: #e21f26;
+    color: var(--primary-color);
 
     @media only screen and (max-width: 1280px) {
       font-size: 26px;
@@ -424,7 +437,7 @@ main {
 
   &.modal__title-secondSpin {
     font-size: 28px;
-    color: #212121;
+    color: var(--text-color-dark);
 
     @media only screen and (max-width: 1280px) {
       font-size: 24px;
@@ -444,7 +457,7 @@ main {
 }
 
 .modal__subtitle {
-  color: #212121;
+  color: var(--text-color-dark);
   text-transform: uppercase;
   font-size: 20px;
   text-align: center;
@@ -457,17 +470,17 @@ main {
 }
 
 .modal__button-formToggle {
-  background: #fff;
-  border: 1px solid #212121;
+  background: var(--text-color-light);
+  border: 1px solid var(--text-color-dark);
   border-radius: 50px;
-  color: #212121;
+  color: var(--text-color-dark);
   padding: 10px 40px;
   font-weight: 700;
 
   &.active {
-    background: #e21f26;
+    background: var(--primary-color);
     border: none;
-    color: #fff;
+    color: var(--text-color-light);
   }
 
   @media only screen and (max-width: 1280px) {
@@ -484,7 +497,7 @@ main {
 .modal__form-input {
   font-size: 16px;
   padding: 15px;
-  color: #212121;
+  color: var(--text-color-dark);
   background: #efefef;
   outline: none;
   border: none;
@@ -492,7 +505,7 @@ main {
   width: 100%;
 
   &::placeholder {
-    color: #797979;
+    color: var(--text-color-grey);
   }
 }
 
@@ -526,8 +539,8 @@ main {
 
 .modal__form-submitBtn {
   width: 100%;
-  background: #e21f26;
-  color: #fff;
+  background: var(--primary-color);
+  color: var(--text-color-light);
   padding: 15px 0;
   border-radius: 5px;
   font-weight: 700;
@@ -541,7 +554,7 @@ main {
 }
 
 .modal__form-additionalInfoLink {
-  color: #e21f26;
+  color: var(--primary-color);
   text-decoration: underline;
 }
 
@@ -621,15 +634,15 @@ main {
 }
 
 .alert {
-  color: #e21f26;
+  color: var(--primary-color);
   padding: 25px 30px 30px;
   border-radius: 5px;
-  border: 1px solid #e21f26;
+  border: 1px solid var(--primary-color);
   position: absolute;
   top: 10px;
   right: 10px;
   font-size: 16px;
-  background: #212121;
+  background: var(--text-color-dark);
   z-index: 100;
 
   @media only screen and (max-width: 768px) {
